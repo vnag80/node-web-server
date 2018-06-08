@@ -10,6 +10,7 @@ var port = process.env.PORT || 3000
  //console.log(__dirname + '/Views/partials')
 //app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/Views/partials');
+app.set('views', __dirname + '/views');
 hbs.registerHelper('getCurrentYear',() => {return  new Date().getFullYear() });
 hbs.registerHelper('Capitals',(textstr)=>{return 'partial functions'});
 app.set('view engine','hbs');
