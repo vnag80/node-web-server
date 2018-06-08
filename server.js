@@ -1,13 +1,25 @@
 const express = require('express');
 const hbs = require('hbs');
+const fs = require('fs');
 var app =   express();
-console.log(text.toUpperCase("rama"));
+var port = process.env.port || 3000
+console.lo;
  app.use(express.static(__dirname + '/public'));
 //app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/Views/partials');
 hbs.registerHelper('getCurrentYear',() => {return  new Date().getFullYear() });
 hbs.registerHelper('Capitals',(textstr)=>{return 'partial functions'});
 app.set('view engine','hbs');
+//app.use((req,res,next)=>{
+//    res.render('main.hbs');
+    
+//})
+app.use((req,res,next)=>{
+    console.log(req.url);
+    fs.appendFileSync('sitelog.txt',req.method + new Date().toString());
+    console.log(new Date().toString());
+    next();
+})
 app.get('/',(req,res) =>{
  res.send('Hello Venkat');
 });
@@ -27,4 +39,4 @@ app.get('/about',(req,res) =>{
 
    )});
     
-app.listen(3000);
+app.listen(port);
