@@ -3,8 +3,11 @@ const hbs = require('hbs');
 const fs = require('fs');
 var app =   express();
 var port = process.env.PORT || 3000
-console.lo;
+ 
  app.use(express.static(__dirname + '/public'));
+ console.log(__dirname + '/public');
+ console.log(__dirname);
+ console.log(__dirname + '/Views/partials')
 //app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/Views/partials');
 hbs.registerHelper('getCurrentYear',() => {return  new Date().getFullYear() });
@@ -14,12 +17,12 @@ app.set('view engine','hbs');
 //    res.render('main.hbs');
     
 //})
-app.use((req,res,next)=>{
-    console.log(req.url);
+//app.use((req,res,next)=>{
+  //  console.log(req.url);
   //  fs.appendFileSync('sitelog.txt',req.method + new Date().toString());
-    console.log(new Date().toString());
-    next();
-})
+  //  console.log(new Date().toString());
+ //   next();
+//})
 app.get('/',(req,res) =>{
  res.send('Hello Venkat');
 });
