@@ -16,7 +16,7 @@ app.set('view engine','hbs');
 //})
 app.use((req,res,next)=>{
     console.log(req.url);
-    fs.appendFileSync('sitelog.txt',req.method + new Date().toString());
+  //  fs.appendFileSync('sitelog.txt',req.method + new Date().toString());
     console.log(new Date().toString());
     next();
 })
