@@ -5,9 +5,9 @@ var app =   express();
 var port = process.env.PORT || 3000
  
  app.use(express.static(__dirname + '/public'));
- console.log(__dirname + '/public');
- console.log(__dirname);
- console.log(__dirname + '/Views/partials')
+// console.log(__dirname + '/public');
+ //console.log(__dirname);
+ //console.log(__dirname + '/Views/partials')
 //app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/Views/partials');
 hbs.registerHelper('getCurrentYear',() => {return  new Date().getFullYear() });
