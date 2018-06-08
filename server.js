@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 var app =   express();
-var port = process.env.port || 3000
+var port = process.env.PORT || 3000
 console.lo;
  app.use(express.static(__dirname + '/public'));
 //app.set('views', path.join(__dirname, 'views'));
