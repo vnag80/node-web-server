@@ -24,7 +24,14 @@ app.set('view engine','hbs');
  //   next();
 //})
 app.get('/',(req,res) =>{
- res.send('Hello Venkat');
+    res.render('Home.hbs',{
+        Title:'about Me',
+        currentyear: new Date().getFullYear()})
+});
+app.get('/projects',(req,res) =>{
+    res.render('projects.hbs',{
+        Title:'about Me',
+        currentyear: new Date().getFullYear()})
 });
 app.get('/about',(req,res) =>{
     res.render('about.hbs',{
@@ -34,7 +41,7 @@ app.get('/about',(req,res) =>{
         currentyear: new Date().getFullYear()}
 
    )});
-   app.get('/bad',(req,res) =>{
+   app.get('/',(req,res) =>{
     res.render('bad.hbs',{
         Title:'error Page',
         Message:'You are in Bad page',
